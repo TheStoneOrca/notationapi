@@ -11,8 +11,7 @@ const port = 3000;
 dotenv.config();
 
 const db = new pg.Client({
-  connectionString:
-    "postgresql://todolist_owner:EZzU0QWn1euc@ep-wandering-fire-a5u4bxp2.us-east-2.aws.neon.tech/notation?sslmode=require",
+  connectionString: process.env.DBURL,
 });
 
 db.connect().then(() => {
